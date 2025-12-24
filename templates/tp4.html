@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='tp4.css') }}" />
+
+<div class="tp4-container">
+  <h1>TP4 – Algorithmes de Graphes</h1>
+
+  <!-- Graph Configuration -->
+  <div class="tp4-section">
+    <h2>Configuration du Graphe</h2>
+    <input id="nodes" placeholder="Sommets: A,B,C,D" />
+    <textarea id="edges" placeholder="Arêtes: A B 1, B C 2, ..."></textarea>
+  </div>
+
+  <!-- Bellman-Ford -->
+  <div class="tp4-section">
+    <h2>Bellman</h2>
+    <input id="source" placeholder="Sommet source" />
+    <button class="tp4-button tp4-button-bellman" onclick="runBellman()">
+      Exécuter
+    </button>
+    <pre id="bellman-output"></pre>
+    <img id="bellman-img" style="display: none" />
+  </div>
+
+  <!-- RLF Coloring -->
+  <div class="tp4-section">
+    <h2>RLF Coloration</h2>
+    <button class="tp4-button tp4-button-rlf" onclick="runRLF()">
+      Exécute
+    </button>
+    <pre id="rlf-output"></pre>
+    <img id="rlf-img" style="display: none" />
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+{% endblock %}
